@@ -1,4 +1,4 @@
-package Player;
+package com.company.Player;
 
 public class Player {
         private static int currentPlayer = 0;
