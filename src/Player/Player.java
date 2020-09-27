@@ -1,7 +1,7 @@
 package Player;
 
 public class Player {
-        private static int currentPlayer;
+        private static int currentPlayer = 0;
         private static int amountOfPlayers = 2;
         private static int p1Score = 0;
         private static int p2Score = 0;
@@ -17,14 +17,17 @@ public class Player {
         public static int getScore(){
             int x = 0;
             switch (currentPlayer){
-                case 1: {
+                case 0: {
                     x = p1Score;
+                    break;
                 }
-                case 2:{
+                case 1:{
                     x= p2Score;
+                    break;
                 }
                 default:{
                     System.out.println("Error player not found");
+                    break;
                 }
             }
             return x;
@@ -32,14 +35,17 @@ public class Player {
 
         public static void setScore(int x){
             switch (currentPlayer){
-                case 1: {
+                case 0: {
                     p1Score = x;
+                    break;
                 }
-                case 2:{
+                case 1:{
                     p2Score = x;
+                    break;
                 }
                 default:{
                     System.out.println("Error player not found");
+                    break;
                 }
             }
         }
