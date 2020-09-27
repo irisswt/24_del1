@@ -12,22 +12,24 @@ public class Game
     static boolean Game = true;
     static int consecu = 0;
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         newGame();
 
-        while (Game)
-        {
+        while (Game) {
             gameLoop();
         }
     }
 
     public static void newGame()
     {
-        System.out.println("Welcome dice roll. The goal of the game is to reach 40 points and then get to sixes. Player 1 start. Please type 'r' to roll");
+        System.out.println("Welcome to dice roll. The goal of the game is to reach 40 points and then roll a pair. Player 1 starts. Please type 'r' to roll");
         Player.setScore(0);
         Player.nextPlayer();
         Player.setScore(0);
+        Player.nextPlayer();
+        Dice.setDice(2,5);
     }
 
     public static void endGame()
@@ -44,53 +46,61 @@ public class Game
         input = scan.nextLine();
 
 
+        if (Dice.getValueDice() == 2)
+        {
+            Player.setScore(0);
+        }
 
-        if(input.toLowerCase().equals("r"))
+        if (input.toLowerCase().equals("r"))
         {
             System.out.println(Dice.roll());
             Player.setScore(Dice.getValueDice() + Player.getScore());
-
-            if(Dice.getValueDice() == 2)
+            if (Player.getScore() > 40)
             {
-                Player.setScore(0);
-            }
 
-            if(Player.getScore() > 40)
-            {
                 Player.setScore(40);
 
-                if(Dice.isDiceSame())
+                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
+                consecu = consecu + 1;
+
+                if (Dice.isDiceSame())
                 {
                     endGame();
                 }
 
             }
-            if(Dice.getValueDice() == 12)
-            {
-                twoSix = twoSix + 1;
-            }
-            if(twoSix == 2)
-            {
-                endGame();
-            }
             else
-            {
-            System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
-            consecu = consecu + 1;
+                {
+                    System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
+                    consecu = consecu + 1;
+                }
 
-            if(consecu >= 2)
-            {
-                twoSix = 0;
-            }
-
-            if(Dice.isDiceSame())
+            if (Dice.isDiceSame())
             {
                 System.out.println("You got an extra turn!");
             }
             else
-            {
+                {
                 Player.nextPlayer();
             }
+
+        }
+
+        if (Dice.getValueDice() == 12)
+        {
+            twoSix = twoSix + 1;
+        }
+        if (twoSix == 2)
+        {
+            endGame();
+        }
+        else
+            {
+
+            if (consecu >= 2) {
+                twoSix = 0;
+            }
+
         }
     }
 }
