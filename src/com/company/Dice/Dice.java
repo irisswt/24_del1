@@ -1,4 +1,4 @@
-package Dice;
+package com.company.Dice;
 
 public class Dice {
 
