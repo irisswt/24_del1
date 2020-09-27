@@ -1,35 +1,41 @@
 package Dice;
 
 public class Dice {
-
+    private static int dice1;
+    private static int dice2;
     public static String toString(int x,int y)
     {
         return  x+" "+y;
     }
-    static String roll()
+    public static String roll()
     {
-        int dice1 =  (int)(Math.random()*6)+1;
-        int dice2 =  (int)(Math.random()*6)+1;
+        dice1 =  (int)(Math.random()*6)+1;
+        dice2 =  (int)(Math.random()*6)+1;
 
         return toString(dice1,dice2);
     }
-    static Boolean isDiceSame(String dice)
+    public static Boolean isDiceSame()
     {
-        char dice1 = dice.charAt(0);
-        char dice2 = dice.charAt(2);
-
         return dice1 == dice2;
     }
-    static String setDice(int x, int y)
+    public static void setDice(int x, int y)
     {
-        return x+" "+y;
+        dice1 = x;
+        dice2 = y;
     }
-    static int getValueDice(String dice)
+    public static int getValueDice()
     {
-        int dice1 = Character.getNumericValue(dice.charAt(0));
-        int dice2 = Character.getNumericValue(dice.charAt(2));
         return dice1+dice2;
     }
+    public static void main(String[] args) {
+        String Dice = roll();
+        setDice(1,5);
+        System.out.println(Dice);
+        System.out.println(isDiceSame());
+        System.out.println(getValueDice());
 
+
+
+    }
 
 }
