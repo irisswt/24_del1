@@ -5,11 +5,11 @@ import Dice.*;
 public class Test
 {
 
-
-    public testRoll()
+// tester metoden roll i Dice 1000 gange, og printer resultatet af ud og hvor mange gange der er slået dobbelt
+    public static void testRoll()
     {
-
         int testCounter = 0;
+
         int sameDiceCounter = 0;
 
         int facevalueTwo = 0;
@@ -27,9 +27,7 @@ public class Test
         while(testCounter<1000)
         {
             Dice.roll();
-            // Hvis metoden ikke virker, prøv at slet kommentar før Dice.getValueDice(); på linjen under
-            //Dice.getValueDice();
-            switch(Dice.getValueDice())
+               switch(Dice.getValueDice())
             {
                 case 2 : facevalueTwo++;
                 break;
@@ -54,8 +52,7 @@ public class Test
                 case 12 : facevalueTwelve++;
                 break;
 
-                default :
-                    System.out.println("Error: Dice didn't roll a value between 1-6");
+                default : System.out.println("Error: Dice didn't roll a value between 1-6");
             }
             if(Dice.isDiceSame() == true)
             {
@@ -76,8 +73,23 @@ public class Test
         System.out.println("Out of 1000 rolls 12 was rolled: " + facevalueTwelve + " times.");
 
         System.out.println("Out of 1000 rolls the amount of times the dice rolled double was: " + sameDiceCounter);
-
     }
+
+    public static void testAllCombinations()
+    {
+
+
+        for(int i=1; i<=6; i++)
+        {
+
+            for(int j=1; j<=6; j++)
+            {
+                Dice.setDice(i,j);
+                System.out.println(i + " + " + j + " = " + (i + j));
+            }
+        }
+    }
+
 
 }
 
