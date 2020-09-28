@@ -7,10 +7,10 @@ import com.company.Player.*;
 
 public class Game
 {
-    static int twoSix = 0;
-    static String input;
-    static boolean Game = true;
-    static int consecu = 0;
+   private static int twoSix = 0;
+   private static String input;
+   private static boolean Game = true;
+   private static int consecu = 0;
 
 
     public static void rules()
@@ -45,7 +45,7 @@ public class Game
         }
     }
 
-    /* remove comments to test game
+    //remove comments to test game
     public static void main(String[] args) {
         newGame();
         while(Game){
@@ -54,7 +54,7 @@ public class Game
         }
     }
 
-     */
+
 
     public static void gameScanner()
     {
