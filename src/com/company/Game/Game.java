@@ -15,22 +15,12 @@ public class Game
 
     public static void rules()
     {
-        if (Player.getScore() > 40) {
+        if (Player.getScore() >= 40) {
 
             if (Dice.isDiceSame()) {
                 endGame();
             }
         }
-
-        if (Dice.getValueDice() == 2) {
-            Player.setScore(0);
-        }
-
-
-        if (Dice.isDiceSame()) {
-            System.out.println("You got an extra turn!");
-        }
-
 
         if (Dice.getValueDice() == 12) {
             twoSix = twoSix + 1;
@@ -45,7 +35,7 @@ public class Game
         }
     }
 
-    /* remove comments to test game
+    // remove comments to test game
     public static void main(String[] args) {
         newGame();
         while(Game){
@@ -53,7 +43,7 @@ public class Game
             rules();
         }
     }
-    */
+
 
 
     private static void gameScanner()
@@ -98,9 +88,22 @@ public class Game
         {
             System.out.println(Dice.roll());
             Player.setScore(Dice.getValueDice() + Player.getScore());
-            System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
-            consecu = consecu + 1;
-            Player.nextPlayer();
+            if (Dice.getValueDice() == 2) {
+                Player.setScore(0);
+                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
+                consecu = consecu + 1;
+            }
+            else{
+                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
+                consecu = consecu + 1;
+            }
+
+            if (Dice.isDiceSame()) {
+                System.out.println("You got an extra turn!");
+            }
+            else{
+                Player.nextPlayer();
+            }
         }
     }
 }
