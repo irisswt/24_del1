@@ -1,6 +1,8 @@
 package Test;
 
 import com.company.Dice.Dice;
+import com.company.Game.Game;
+import com.company.Player.Player;
 
 
 public class Test
@@ -91,6 +93,15 @@ public class Test
             }
         }
     }
+// Tests winning condition of rolling double after getting 40 points.
+    public static void testGameWinByScore()
+    {
+        Player.setScore(41);
+        Dice.setDice(5, 5);
+        Game.rules();
+    }
+
+
 
 
 }
