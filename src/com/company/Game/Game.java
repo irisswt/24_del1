@@ -12,14 +12,6 @@ public class Game
     static boolean Game = true;
     static int consecu = 0;
 
-    public static void main(String[] args) { //Remove this when making Main script
-
-        newGame();
-
-        while(Game){
-            gameLoop();
-        }
-    }
 
     public static void gameScanner()
     {
