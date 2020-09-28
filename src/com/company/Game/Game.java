@@ -35,7 +35,7 @@ public class Game
         }
     }
 
-    // remove comments to test game
+    /* remove comments to test game
     public static void main(String[] args) {
         newGame();
         while(Game){
@@ -43,6 +43,8 @@ public class Game
             rules();
         }
     }
+
+     */
 
 
 
