@@ -1,11 +1,12 @@
 package Test;
-import Dice.*;
+
+import com.company.Dice.Dice;
 
 
 public class Test
 {
 
-// tester metoden roll i Dice 1000 gange, og printer resultatet af ud og hvor mange gange der er slået dobbelt
+// Tests the method roll from Dice class a 1000 times to check probability on results and doubles
     public static void testRoll()
     {
         int testCounter = 0;
@@ -75,6 +76,7 @@ public class Test
         System.out.println("Out of 1000 rolls the amount of times the dice rolled double was: " + sameDiceCounter);
     }
 
+    // Tests all combinations of rolls by using the setDice, toString and getValueDice methods from Dice class
     public static void testAllCombinations()
     {
 
@@ -85,7 +87,7 @@ public class Test
             for(int j=1; j<=6; j++)
             {
                 Dice.setDice(i,j);
-                System.out.println(i + " + " + j + " = " + (i + j));
+                System.out.println(Dice.toString(i,j) + " = " + Dice.getValueDice());
             }
         }
     }
