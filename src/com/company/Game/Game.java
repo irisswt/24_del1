@@ -45,7 +45,7 @@ public class Game
         }
     }
 
-    //remove comments to test game
+    /* remove comments to test game
     public static void main(String[] args) {
         newGame();
         while(Game){
@@ -53,10 +53,10 @@ public class Game
             rules();
         }
     }
+    */
 
 
-
-    public static void gameScanner()
+    private static void gameScanner()
     {
         Scanner scan = new Scanner(System.in);
         input = scan.nextLine();
