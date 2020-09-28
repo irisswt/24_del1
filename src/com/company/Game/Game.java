@@ -10,6 +10,8 @@ public class Game
     static int twoSix = 0;
     static String input;
     static boolean Game = true;
+    static int consecu = 0;
+
 
     public static void rules()
     {
@@ -43,8 +45,7 @@ public class Game
         }
     }
 
-    static int consecu = 0;
-
+    /* remove comments to test game
     public static void main(String[] args) {
         newGame();
         while(Game){
@@ -52,6 +53,8 @@ public class Game
             rules();
         }
     }
+
+     */
 
     public static void gameScanner()
     {
