@@ -29,7 +29,9 @@ public class Game
 
     public static void newGame()
     {
-        System.out.println("Welcome to dice roll. The goal of the game is to reach 40 points and then roll a pair. if the player rolls a pair before they reach 40 point, then they get an extra turn. if the player rolls a pair of 1, then they loose all their points. Please type 'r' to roll");
+        System.out.println("Welcome to dice roll. The goal of the game is to reach 40 points and then roll a pair. " +
+                "if the player rolls a pair before they reach 40 point, then they get an extra turn. " +
+                "if the player rolls a pair of 1, then they loose all their points. Please type 'r' to roll");
         Player.setScore(0);
         Player.nextPlayer();
         Player.setScore(0);
