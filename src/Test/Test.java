@@ -93,6 +93,18 @@ public class Test
             }
         }
     }
+
+    // Tests resetting of points when rolling double one.
+    public static void testTwoOnes()
+    {
+        Player.setScore(20);
+        System.out.println(Player.getScore());
+        Dice.setDice(1,1);
+        Game.rules();
+        System.out.println(Player.getScore());
+
+    }
+
 // Tests winning condition of rolling double after getting 40 points.
     public static void testGameWinByScore()
     {
@@ -101,7 +113,13 @@ public class Test
         Game.rules();
     }
 
-
+    // Test winning condition by rolling double six twice.
+    public static void testGameWinByTwoSix()
+    {
+        Dice.setDice(6,6);
+        Game.rules();
+        Game.rules();
+    }
 
 
 }
