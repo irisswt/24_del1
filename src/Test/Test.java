@@ -1,6 +1,8 @@
 package Test;
 
 import com.company.Dice.Dice;
+import com.company.Game.Game;
+import com.company.Player.Player;
 
 
 public class Test
@@ -90,6 +92,33 @@ public class Test
                 System.out.println(Dice.toString(i,j) + " = " + Dice.getValueDice());
             }
         }
+    }
+
+    // Tests resetting of points when rolling double one.
+    public static void testTwoOnes()
+    {
+        Player.setScore(20);
+        System.out.println(Player.getScore());
+        Dice.setDice(1,1);
+        Game.rules();
+        System.out.println(Player.getScore());
+
+    }
+
+// Tests winning condition of rolling double after getting 40 points.
+    public static void testGameWinByScore()
+    {
+        Player.setScore(41);
+        Dice.setDice(5, 5);
+        Game.rules();
+    }
+
+    // Test winning condition by rolling double six twice.
+    public static void testGameWinByTwoSix()
+    {
+        Dice.setDice(6,6);
+        Game.rules();
+        Game.rules();
     }
 
 
