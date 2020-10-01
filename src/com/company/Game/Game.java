@@ -76,7 +76,7 @@ public class Game // sets the variable conditions for the dice game
     {
         gameScanner();
 
-        if (input.toLowerCase().equals("r"))
+        if (input.toLowerCase().equals("r")) // if a player inputs r in the terminal, the following statements are executed
         {
             System.out.println(Dice.roll());
             Player.setScore(Dice.getValueDice() + Player.getScore());
