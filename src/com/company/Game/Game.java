@@ -56,7 +56,9 @@ public class Game // sets the variable conditions for the dice game
         twoSix = 0;
     } // consecu is set to 0 and twoSix is set to 0 when a new game starts.
 
-    public static void endGame()
+    public static void endGame() /* when a game ends, system prints out the player who won the game. Dice are set to 2
+    and 5. System prints conditions for player to start a new game. Scanner is initialized. If the user inputs n, a
+    new game starts. */
     {
         System.out.println("Player " + Player.playerNumber() + " wins the game!");
         Dice.setDice(2,5);
