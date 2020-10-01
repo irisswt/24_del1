@@ -80,7 +80,7 @@ public class Game // sets the variable conditions for the dice game
         {
             System.out.println(Dice.roll());
             Player.setScore(Dice.getValueDice() + Player.getScore());
-            if (Dice.getValueDice() == 2) {
+            if (Dice.getValueDice() == 2) { //if dice values equal two, the player's score is set to 0
                 Player.setScore(0);
                 System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
                 consecu = consecu + 1;
