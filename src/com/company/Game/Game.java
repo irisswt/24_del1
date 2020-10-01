@@ -5,7 +5,7 @@ import com.company.Dice.*;
 import com.company.Player.*;
 
 
-public class Game
+public class Game // sets the variable conditions for the dice game
 {
    private static int twoSix = 0;
    private static String input;
@@ -13,7 +13,7 @@ public class Game
    private static int consecu = 0;
 
 
-    public static void rules()
+    public static void rules() // method that sets the rules for the dice game
     {
         if (Player.getScore() >= 40) {
 
