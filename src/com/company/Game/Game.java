@@ -20,41 +20,29 @@ public class Game // sets the variable conditions for the dice game
             if (Dice.isDiceSame()) {
                 endGame();
             }
-        }
+        } // if a player has a score of 40 or higher, the game ends when the two dice show the same face values.
 
         if (Dice.getValueDice() == 12) {
             twoSix = twoSix + 1;
-        }
+        } /* if the sum of the two dice equal 12 (i.e. both dice are showing equal face values), the variable twoSix
+        adds +1 */
 
         if (twoSix == 2) {
             endGame();
-        }
+        } // if the two dice equal 12 twice in a row, the twoSix variable becomes equal to two and the game ends
 
         if (consecu >= 2) {
             twoSix = 0;
-        }
+        } // if a player rolled the dice for two or more consecutive turns, the twoSix variable resets to 0
     }
 
-    /* remove comments to test game
-    public static void main(String[] args) {
-        newGame();
-        while(Game){
-            gameLoop();
-            rules();
-        }
-    }
-
-     */
-
-
-
-    private static void gameScanner()
+    private static void gameScanner() // the scanner method used for user input
     {
         Scanner scan = new Scanner(System.in);
         input = scan.nextLine();
     }
 
-    public static void newGame()
+    public static void newGame() // when a new game starts, player scores are set to 0. Dice are set to 2 and 5.
     {
         System.out.println("Welcome to dice roll. The goal of the game is to reach 40 points and then roll a pair. " +
                 "if the player rolls a pair before they reach 40 point, then they get an extra turn. " +
@@ -66,7 +54,7 @@ public class Game // sets the variable conditions for the dice game
         Dice.setDice(2,5);
         consecu = 0;
         twoSix = 0;
-    }
+    } // consecu is set to 0 and twoSix is set to 0 when a new game starts.
 
     public static void endGame()
     {
