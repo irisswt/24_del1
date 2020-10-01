@@ -8,7 +8,7 @@ public class Player {
 
         public Player(){
 
-        }
+         }
 
         public static void nextPlayer(){
             currentPlayer = (currentPlayer + 1)% (amountOfPlayers);
