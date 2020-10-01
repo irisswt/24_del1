@@ -33,7 +33,7 @@ public class Game // sets the variable conditions for the dice game
 
         if (consecu >= 2) {
             twoSix = 0;
-        } //
+        } // if a player rolled the dice for two or more consecutive turns, the twoSix variable resets to 0
     }
 
     /* remove comments to test game
