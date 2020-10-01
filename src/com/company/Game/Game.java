@@ -36,7 +36,7 @@ public class Game // sets the variable conditions for the dice game
         } // if a player rolled the dice for two or more consecutive turns, the twoSix variable resets to 0
     }
 
-    private static void gameScanner()
+    private static void gameScanner() // the scanner method used for user input
     {
         Scanner scan = new Scanner(System.in);
         input = scan.nextLine();
