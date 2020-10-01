@@ -5,7 +5,7 @@ import com.company.Dice.*;
 import com.company.Player.*;
 
 
-public class Game
+public class Game // sets the conditions for the dice game
 {
    private static int twoSix = 0;
    private static String input;
