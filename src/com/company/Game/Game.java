@@ -42,7 +42,7 @@ public class Game // sets the variable conditions for the dice game
         input = scan.nextLine();
     }
 
-    public static void newGame()
+    public static void newGame() // when a new game starts, player scores are set to 0. Dice are set to 2 and 5.
     {
         System.out.println("Welcome to dice roll. The goal of the game is to reach 40 points and then roll a pair. " +
                 "if the player rolls a pair before they reach 40 point, then they get an extra turn. " +
@@ -54,7 +54,7 @@ public class Game // sets the variable conditions for the dice game
         Dice.setDice(2,5);
         consecu = 0;
         twoSix = 0;
-    }
+    } // consecu is set to 0 and twoSix is set to 0 when a new game starts.
 
     public static void endGame()
     {
