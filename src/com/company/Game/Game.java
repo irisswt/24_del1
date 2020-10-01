@@ -36,19 +36,6 @@ public class Game // sets the variable conditions for the dice game
         } // if a player rolled the dice for two or more consecutive turns, the twoSix variable resets to 0
     }
 
-    /* remove comments to test game
-    public static void main(String[] args) {
-        newGame();
-        while(Game){
-            gameLoop();
-            rules();
-        }
-    }
-
-     */
-
-
-
     private static void gameScanner()
     {
         Scanner scan = new Scanner(System.in);
