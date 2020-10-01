@@ -85,9 +85,9 @@ public class Game // sets the variable conditions for the dice game
                 Player.setScore(0);
                 System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore()); /* Prints player
                 and their respective score for the dice turn */
-                consecu = consecu + 1;
+                consecu = consecu + 1; // adds 1 to the variable consecu (used for rules regarding consecutive dice values
             }
-            else{
+            else{ // if dice value does not equal 2, the player number is printed along with the player's current score
                 System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
                 consecu = consecu + 1;
             }
