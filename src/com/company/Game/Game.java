@@ -72,7 +72,7 @@ public class Game // sets the variable conditions for the dice game
         }
     }
 
-    public static void gameLoop()
+    public static void gameLoop() // method for the results of rolling the dice
     {
         gameScanner();
 
