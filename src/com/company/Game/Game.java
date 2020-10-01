@@ -79,10 +79,12 @@ public class Game // sets the variable conditions for the dice game
         if (input.toLowerCase().equals("r")) // if a player inputs r in the terminal, the following statements are executed
         {
             System.out.println(Dice.roll());
-            Player.setScore(Dice.getValueDice() + Player.getScore());
+            Player.setScore(Dice.getValueDice() + Player.getScore()); /* adds the dice roll value to the player's
+            current score */
             if (Dice.getValueDice() == 2) { //if dice values equal two, the player's score is set to 0
                 Player.setScore(0);
-                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
+                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore()); /* Prints player
+                and their respective score for the dice turn */
                 consecu = consecu + 1;
             }
             else{
