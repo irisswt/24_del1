@@ -13,7 +13,7 @@ public class Player {
         public static void nextPlayer(){
             currentPlayer = (currentPlayer + 1)% (amountOfPlayers);
         }
-        //Modulus of currentPlayer+1 to add swap turn
+        //Modulus of currentPlayer+1 to swap turn.
         public static int getScore(){
             int x = 0;
             switch (currentPlayer){
@@ -21,21 +21,21 @@ public class Player {
                     x = p1Score;
                     break;
                 }
-                //Player1 score defined
+                //Player1 score defined.
 
                 case 1:{
                     x = p2Score;
                     break;
                 }
-                //Player2 score defined
+                //Player2 score defined.
 
                 default:{
                     System.out.println("Error player not found");
                     break;
-                } //third player not existing
+                } //Third player not existing.
             }
             return x;
-            //Return x value
+            //Return x value for setScore.
         }
 
         public static void setScore(int x){
@@ -44,24 +44,24 @@ public class Player {
                     p1Score = x;
                     break;
                 }
-                //Set player1 score
+                //Set player1 score.
 
                 case 1:{
                     p2Score = x;
                     break;
                 }
-                //Set player2 score
+                //Set player2 score.
 
                 default:{
                     System.out.println("Error player not found");
                     break;
                 }
-                //Third player not existing
+                //Third player not existing.
             }
         }
 
         public static int playerNumber(){return currentPlayer+1;}
-
+            //Return currentPlayer+1, to rerun code in the other case.
 
 
 }
