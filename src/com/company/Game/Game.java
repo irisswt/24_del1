@@ -92,11 +92,12 @@ public class Game // sets the variable conditions for the dice game
                 consecu = consecu + 1;
             }
 
-            if (Dice.isDiceSame()) {
+            if (Dice.isDiceSame()) { /* if the player gets the same value for each respective dice, the system prints
+            "You got an extra turn!"*/
                 System.out.println("You got an extra turn!");
             }
             else{
-                Player.nextPlayer();
+                Player.nextPlayer(); // if above statement is not met, the game changes to the next player's turn
             }
         }
     }
