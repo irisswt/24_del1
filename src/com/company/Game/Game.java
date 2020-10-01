@@ -36,26 +36,13 @@ public class Game // sets the variable conditions for the dice game
         } // if a player rolled the dice for two or more consecutive turns, the twoSix variable resets to 0
     }
 
-    /* remove comments to test game
-    public static void main(String[] args) {
-        newGame();
-        while(Game){
-            gameLoop();
-            rules();
-        }
-    }
-
-     */
-
-
-
-    private static void gameScanner()
+    private static void gameScanner() // the scanner method used for user input
     {
         Scanner scan = new Scanner(System.in);
         input = scan.nextLine();
     }
 
-    public static void newGame()
+    public static void newGame() // when a new game starts, player scores are set to 0. Dice are set to 2 and 5.
     {
         System.out.println("Welcome to dice roll. The goal of the game is to reach 40 points and then roll a pair. " +
                 "if the player rolls a pair before they reach 40 point, then they get an extra turn. " +
@@ -67,9 +54,11 @@ public class Game // sets the variable conditions for the dice game
         Dice.setDice(2,5);
         consecu = 0;
         twoSix = 0;
-    }
+    } // consecu is set to 0 and twoSix is set to 0 when a new game starts.
 
-    public static void endGame()
+    public static void endGame() /* when a game ends, system prints out the player who won the game. Dice are set to 2
+    and 5. System prints conditions for player to start a new game. Scanner is initialized. If the user inputs n, a
+    new game starts. */
     {
         System.out.println("Player " + Player.playerNumber() + " wins the game!");
         Dice.setDice(2,5);
@@ -83,29 +72,32 @@ public class Game // sets the variable conditions for the dice game
         }
     }
 
-    public static void gameLoop()
+    public static void gameLoop() // method for the results of rolling the dice
     {
         gameScanner();
 
-        if (input.toLowerCase().equals("r"))
+        if (input.toLowerCase().equals("r")) // if a player inputs r in the terminal, the following statements are executed
         {
             System.out.println(Dice.roll());
-            Player.setScore(Dice.getValueDice() + Player.getScore());
-            if (Dice.getValueDice() == 2) {
+            Player.setScore(Dice.getValueDice() + Player.getScore()); /* adds the dice roll value to the player's
+            current score */
+            if (Dice.getValueDice() == 2) { //if dice values equal two, the player's score is set to 0
                 Player.setScore(0);
-                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
-                consecu = consecu + 1;
+                System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore()); /* Prints player
+                and their respective score for the dice turn */
+                consecu = consecu + 1; // adds 1 to the variable consecu (used for rules regarding consecutive dice values
             }
-            else{
+            else{ // if dice value does not equal 2, the player number is printed along with the player's current score
                 System.out.println("Player " + Player.playerNumber() + " Score: " + Player.getScore());
                 consecu = consecu + 1;
             }
 
-            if (Dice.isDiceSame()) {
+            if (Dice.isDiceSame()) { /* if the player gets the same value for each respective dice, the system prints
+            "You got an extra turn!"*/
                 System.out.println("You got an extra turn!");
             }
             else{
-                Player.nextPlayer();
+                Player.nextPlayer(); // if above statement is not met, the game changes to the next player's turn
             }
         }
     }
