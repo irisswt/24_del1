@@ -24,15 +24,16 @@ public class Game // sets the variable conditions for the dice game
 
         if (Dice.getValueDice() == 12) {
             twoSix = twoSix + 1;
-        } // if the sum of the two dice equal 12 (i.e. both dice are showing equal face values), the player receives an extra turn
+        } /* if the sum of the two dice equal 12 (i.e. both dice are showing equal face values), the variable twoSix
+        adds +1 */
 
         if (twoSix == 2) {
             endGame();
-        } //
+        } // if the two dice equal 12 twice in a row, the twoSix variable becomes equal to two and the game ends
 
         if (consecu >= 2) {
             twoSix = 0;
-        }
+        } //
     }
 
     /* remove comments to test game
