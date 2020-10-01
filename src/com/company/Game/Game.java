@@ -20,15 +20,15 @@ public class Game // sets the variable conditions for the dice game
             if (Dice.isDiceSame()) {
                 endGame();
             }
-        }
+        } // if a player has a score of 40 or higher, the game ends when the two dice show the same face values.
 
         if (Dice.getValueDice() == 12) {
             twoSix = twoSix + 1;
-        }
+        } // if the sum of the two dice equal 12 (i.e. both dice are showing equal face values), the player receives an extra turn
 
         if (twoSix == 2) {
             endGame();
-        }
+        } //
 
         if (consecu >= 2) {
             twoSix = 0;
