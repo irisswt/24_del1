@@ -9,59 +9,61 @@ public class Player {
         public Player(){
 
         }
-
+        //Modulus of currentPlayer+1 to swap turn.
         public static void nextPlayer(){
             currentPlayer = (currentPlayer + 1)% (amountOfPlayers);
         }
-        //Modulus of currentPlayer+1 to swap turn.
-        public static int getScore(){
+                public static int getScore(){
             int x = 0;
             switch (currentPlayer){
+                //Player1 score defined.
                 case 0: {
                     x = p1Score;
                     break;
                 }
-                //Player1 score defined.
 
+                //Player2 score defined.
                 case 1:{
                     x = p2Score;
                     break;
                 }
-                //Player2 score defined.
 
+                //Third player not existing.
                 default:{
                     System.out.println("Error player not found");
                     break;
-                } //Third player not existing.
+                }
             }
-            return x;
             //Return x value for setScore.
+            return x;
+
         }
 
         public static void setScore(int x){
             switch (currentPlayer){
+                //Set player1 score.
                 case 0: {
                     p1Score = x;
                     break;
                 }
-                //Set player1 score.
 
-                case 1:{
+                //Set player2 score.
+                case 1: {
                     p2Score = x;
                     break;
                 }
-                //Set player2 score.
 
+                //Third player not existing.
                 default:{
                     System.out.println("Error player not found");
                     break;
                 }
-                //Third player not existing.
+
             }
         }
-
+    //Return currentPlayer+1, to rerun code in the other case.
         public static int playerNumber(){return currentPlayer+1;}
-            //Return currentPlayer+1, to rerun code in the other case.
+
 
 
 }
